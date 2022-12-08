@@ -1,5 +1,7 @@
 package com.practice.basics;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -26,6 +28,7 @@ public class OpenBrowser {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.google.com");
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		String currentURl = driver.getCurrentUrl();
 		System.out.println(currentURl);
 		Thread.sleep(2000);
